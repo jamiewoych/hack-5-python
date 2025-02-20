@@ -21,10 +21,12 @@ def step(pop):
     new_pop = random.choices(pop, k = N)
     return(new_pop)
 
-def wf(N, f, ngens, verbose =False):
+def wf(N, f, ngens, verbose =False): #add outfile
     if args.verbose:
         print("verbosity is on")
     pop = init(N, f)
+    
+    #if outfile write file, else:
     for i in range(ngens):
         pop = step(pop)
     x = (sum(pop)/N)
@@ -35,7 +37,7 @@ if __name__ == "__main__":
     parser.add_argument("-N", help ="population", dest='N', type=int, default =10)
     parser.add_argument("-f", help="frequency", dest='f', type=float, default=0.2)
     parser.add_argument("-g", help="ngens", dest='ngens', type=int, default=1)
-    #parser.add_argument("outfile", help ="write out community state at each given step", dest=?, type=?, default=?, action=?)
+    #parser.add_argument("-o", help ="write out community state at each given step", dest=outfile, default=stdout ,type=argparse.FileType('w') , action=?)
     
     parser.add_argument("-v", "--verbose", help="increase output verbosity", action ="store_true")
     args = parser.parse_args()   
