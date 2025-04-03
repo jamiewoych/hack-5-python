@@ -48,7 +48,7 @@ for i in range(ngens):
        break
 
     elif p.state != ["fixed", "extinct"]:
-    	st.sidebar.info("Simulation completed without fixation or extinction.")
+    	st.write("Simulation completed without fixation or extinction.")
 
     # sleep for a small amount of time so you can watch the animation
     time.sleep(0.05)
@@ -60,4 +60,4 @@ progress_bar.empty()
 # Add a button to rerun the simulation
 st.button("Rerun")
 
-##
+##https://jw-hack5python.streamlit.app/
