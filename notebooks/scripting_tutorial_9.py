@@ -25,4 +25,3 @@ if __name__ == "__main__":
     print(random_password(length=args.length, verbose=args.verbose))
 
     
-  
